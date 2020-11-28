@@ -1,7 +1,7 @@
 var countdownDisplay = document.querySelector("#countdown");
 var secondsLeft;
 var secondsElapsed = 0;
-var startButton;
+var startButton = document.querySelector("#start");
 var totalSeconds = 75;
 
 function startTimer() {
@@ -13,13 +13,11 @@ function startTimer() {
         interval = setInterval(function() {
             secondsElapsed++;
             totalSeconds--;
-            console.log(secondsElapsed);
+            countdownDisplay.innerHTML = totalSeconds;
         }, 1000);
     } else {
         alert("Minutes of work/rest must be greater than 0.")
     }
 }
-
-startTimer();
 
 startButton.addEventListener("click", startTimer);

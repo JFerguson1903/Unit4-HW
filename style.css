@@ -8,3 +8,7 @@
     left: 50%;
     position: absolute;
 }
+
+form {
+    position: center;
+}
