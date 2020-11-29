@@ -45,7 +45,7 @@ function loadQuestion(questionIndex) {
 }
 
 function usersAnswerChoice(selectedAnswerIndex) {
-    if (selectedAnswerIndex === questions[activeQuestion].answer) {
+    if (selectedAnswerIndex == questions[activeQuestion].answer) {
         console.log("correct")
     } else {
         reduceTimer();
