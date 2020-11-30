@@ -5,6 +5,7 @@ var quizTimeContainer = document.querySelector("#questions");
 var allDoneContainer = document.querySelector("#allDone");
 var quizTimeSection = document.querySelector("#quizTime");
 var finalScoreSpan = document.querySelector("#finalScore");
+
 var totalSeconds = 0;
 var activeQuestion = 0;
 var finalScore = 0;
@@ -59,7 +60,7 @@ function usersAnswerChoice(selectedAnswerIndex) {
         countdownDisplay.innerHTML = 0;
         allDoneContainer.classList.remove("d-none");
         quizTimeContainer.classList.add("d-none");
-
+        document.getElementById("reportedScore").value = finalScore;
     } else {
         activeQuestion++;
         loadQuestion(activeQuestion);
