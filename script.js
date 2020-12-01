@@ -5,6 +5,7 @@ var quizTimeContainer = document.querySelector("#questions");
 var allDoneContainer = document.querySelector("#allDone");
 var quizTimeSection = document.querySelector("#quizTime");
 var finalScoreSpan = document.querySelector("#finalScore");
+var answerAlertSection = document.querySelector("#answerAlert");
 
 var totalSeconds = 0;
 var activeQuestion = 0;
@@ -47,11 +48,15 @@ function loadQuestion(questionIndex) {
 
 function usersAnswerChoice(selectedAnswerIndex) {
     if (selectedAnswerIndex == questions[activeQuestion].answer) {
-        console.log("correct")
+        answerAlertSection.innerHTML = `<div class="pt-1 text-muted border-top text-left"><em>Correct!</em></div>`;
     } else {
+        answerAlertSection.innerHTML = `<div class="pt-1 text-muted border-top text-left"><em>Wrong!</em></div>`;
         reduceTimer();
-        console.log("you wrong SUCKAH!");
     };
+
+    setTimeout(function() {
+        answerAlertSection.innerHTML = "";
+    }, 1500);
 
     if (activeQuestion === questionsLength) {
         finalScore = totalSeconds;
