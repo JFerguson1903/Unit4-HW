@@ -6,6 +6,11 @@ var listedHighScores = document.querySelector("#listedHighScores");
 var clearButton = document.querySelector("#clear");
 var currentHighScore = JSON.parse(localStorage.getItem("highScores"));
 
+url.searchParams.delete("initials");
+url.searchParams.delete("reportedScore");
+history.replaceState(null, null, url);
+
+
 highScoresPageLoad();
 
 function highScoresPageLoad() {
@@ -33,7 +38,7 @@ function highScoresPageLoad() {
 
 function compileHighScores() {
     var rank = 1;
-    for (let index = 0; index < currentHighScore.length; index++) {
+    for (var index = 0; index < currentHighScore.length; index++) {
 
         listedHighScores.innerHTML += `<li class="list-group-item list-group-item-secondary text-left">${rank}. ${currentHighScore[index][0]} - ${currentHighScore[index][1]}</li>`
         rank++;
