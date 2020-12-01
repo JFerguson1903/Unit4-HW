@@ -4,6 +4,7 @@ var initials = url.searchParams.get("initials");
 var score = url.searchParams.get("reportedScore");
 var listedHighScores = document.querySelector("#listedHighScores");
 var clearButton = document.querySelector("#clear");
+var currentHighScore = JSON.parse(localStorage.getItem("highScores"));
 
 var results = [
     [initials, score]
@@ -12,7 +13,12 @@ var results = [
 // Store
 localStorage.setItem("highScores", JSON.stringify(results));
 
-var currentHighScore = JSON.parse(localStorage.getItem("highScores"));
+if (currentHighScore === null) {
+    listedHighScores.innerHTML = `<li class="list-group-item list-group-item-warning">No Scores to display. Play a round and get on the board!</li>`
+    clearButton.classList.add("d-none");
+} else {
+
+}
 
 var rank = 1;
 
