@@ -9,6 +9,6 @@
     position: absolute;
 }
 
-form {
-    position: center;
+.btnAnswer {
+    min-width: 50%;
 }

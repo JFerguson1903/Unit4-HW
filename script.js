@@ -41,7 +41,7 @@ function loadQuestion(questionIndex) {
 
     var options = questions[questionIndex].choices;
     for (var opt in options) {
-        quizTimeSection.innerHTML += `<div><button type="button" value="${opt}" class="btnAnswer btn btn-secondary btn-sm my-2">${String(options[opt])}</button></div>`;
+        quizTimeSection.innerHTML += `<div><button type="button" value="${opt}" class="btnAnswer btn btn-secondary btn-md my-2">${String(options[opt])}</button></div>`;
     }
 }
 
