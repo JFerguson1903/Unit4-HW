@@ -6,26 +6,40 @@ var listedHighScores = document.querySelector("#listedHighScores");
 var clearButton = document.querySelector("#clear");
 var currentHighScore = JSON.parse(localStorage.getItem("highScores"));
 
-var results = [
-    [initials, score]
-];
+highScoresPageLoad();
 
-// Store
-localStorage.setItem("highScores", JSON.stringify(results));
+function highScoresPageLoad() {
+    if (currentHighScore === null) {
+        currentHighScore = [];
+    }
 
-if (currentHighScore === null) {
-    listedHighScores.innerHTML = `<li class="list-group-item list-group-item-warning">No Scores to display. Play a round and get on the board!</li>`
-    clearButton.classList.add("d-none");
-} else {
+    if (initials != null && score != null) {
+        currentHighScore.push([initials, score]);
+        currentHighScore.sort(function(a, b) { return b[1] - a[1] });
+        // Store
+        localStorage.setItem("highScores", JSON.stringify(currentHighScore));
+
+    }
+    console.log(currentHighScore.length);
+    if (currentHighScore.length === 0) {
+        listedHighScores.innerHTML = `<li class="list-group-item list-group-item-warning">No Scores to display. Play a round and get on the board!</li>`
+        clearButton.classList.add("d-none");
+    }
+
+    compileHighScores();
 
 }
 
-var rank = 1;
 
-for (let index = 0; index < currentHighScore.length; index++) {
+function compileHighScores() {
+    var rank = 1;
+    for (let index = 0; index < currentHighScore.length; index++) {
 
-    listedHighScores.innerHTML = `<li class="list-group-item list-group-item-secondary text-left">${rank}. ${currentHighScore[index][0]} - ${currentHighScore[index][1]}</li>`
+        listedHighScores.innerHTML += `<li class="list-group-item list-group-item-secondary text-left">${rank}. ${currentHighScore[index][0]} - ${currentHighScore[index][1]}</li>`
+        rank++;
+    }
 }
+
 
 function clearLocalStorage() {
     localStorage.removeItem("highScores");
