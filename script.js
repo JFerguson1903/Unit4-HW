@@ -33,7 +33,7 @@ var questionsLength = questions.length - 1;
 
 function quizStart() {
     infoContainer.classList.add("d-none");
-    startTimer(6);
+    startTimer(76);
     loadQuestion(activeQuestion);
 }
 
