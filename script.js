@@ -14,18 +14,53 @@ var finalScore = 0;
 
 var questions = [{
         question: "Inside which HTML element do we put the JavaScript?",
-        choices: ["script", "scripting", "javascript", "js"],
+        choices: ['script', 'scripting', 'javascript', 'js'],
         answer: 0
     },
     {
         question: "Where is the correct place to insert a JavaScript?",
-        choices: ["The <head> section", "Both the <head> section and the <body> section are correct", "The <body> section"],
+        choices: ['The head section', 'Both the head section and the body section are correct', 'The body section'],
         answer: 1
     },
     {
         question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
         choices: ['script name="xxx.js"', 'script src="xxx.js"', 'script href="xxx.js"'],
         answer: 1
+    },
+    {
+        question: "How do you write 'Hello World' in an alert box?",
+        choices: ['alerBox("Hello World");', 'mgs("Hello World");', 'alert("Hello World");', 'msgBox("Hello World");'],
+        answer: 2
+    },
+    {
+        question: "Which operator is used to assign a value to a variable?",
+        choices: ['X', '*', '=', '-'],
+        answer: 2
+    },
+    {
+        question: "How do you delare a JavaScript variable?",
+        choices: ['variable carName;', 'var carName;', 'v carName;'],
+        answer: 1
+    },
+    {
+        question: "What is the correct way to write a JavaScript array?",
+        choices: ['var colors = "red", "green", "blue"', 'var colors = (1:"red", 2:"green", 3:"blue")', 'var colors = ["red", "green", "blue"]', 'var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")'],
+        answer: 2
+    },
+    {
+        question: "How can you add a comment in a JavaScript?",
+        choices: ['//This is a comment', '!--This is a comment--', '`This is a comment'],
+        answer: 0
+    },
+    {
+        question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+        choices: ['if 1 =! 5 then', 'if (i <> 5)', 'if i <> 5', 'if (i !=5)'],
+        answer: 3
+    },
+    {
+        question: "How do you call a function named 'myFunction'?",
+        choices: ['call myFunction()', 'call function myFunction()', 'myFunction()'],
+        answer: 2
     }
 ];
 
