@@ -20,7 +20,7 @@ The additional acceptance criteria was as follows:
 
 Below is an image that shows the demo for the application's functionality that was provided in the assignment: 
 
-![Code Quiz Demo](./Assets\04-web-apis-homework-demo.gif)
+![Code Quiz Demo](https://user-images.githubusercontent.com/72481828/101234029-c93f9300-3681-11eb-9b67-2143c3f62bce.gif)
 
 ## Credits
 
