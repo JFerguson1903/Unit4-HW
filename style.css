@@ -1,6 +1,3 @@
-/* Used throught site pages */
-
-
 /* centered navbar brand */
 
 .navbar-brand {
@@ -8,6 +5,9 @@
     left: 50%;
     position: absolute;
 }
+
+
+/* setting size of answer buttons */
 
 .btnAnswer {
     min-width: 50%;

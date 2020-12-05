@@ -1,3 +1,4 @@
+// variables set for locations in index.html 
 var countdownDisplay = document.querySelector("#countdown");
 var startButton = document.querySelector("#start");
 var infoContainer = document.querySelector("#info");
@@ -7,11 +8,7 @@ var quizTimeSection = document.querySelector("#quizTime");
 var finalScoreSpan = document.querySelector("#finalScore");
 var answerAlertSection = document.querySelector("#answerAlert");
 
-var totalSeconds = 0;
-var activeQuestion = 0;
-var finalScore = 0;
-
-
+// questions, answer choices, and correct answer displayed in objects
 var questions = [{
         question: "Inside which HTML element do we put the JavaScript?",
         choices: ['script', 'scripting', 'javascript', 'js'],
@@ -64,14 +61,20 @@ var questions = [{
     }
 ];
 
+// global variables set
+var totalSeconds = 0;
+var activeQuestion = 0;
+var finalScore = 0;
 var questionsLength = questions.length - 1;
 
+// hids info container, sets timer for 75 seconds and loads the first question.
 function quizStart() {
     infoContainer.classList.add("d-none");
     startTimer(76);
     loadQuestion(activeQuestion);
 }
 
+// loads questions until all have displayed or when endQuiz function is triggered to run
 function loadQuestion(questionIndex) {
     quizTimeSection.innerHTML = `<h2>${questions[questionIndex].question}</h2>`;
 
@@ -81,6 +84,7 @@ function loadQuestion(questionIndex) {
     }
 }
 
+// alerts correctness of answer selection
 function usersAnswerChoice(selectedAnswerIndex) {
     if (selectedAnswerIndex == questions[activeQuestion].answer) {
         answerAlertSection.innerHTML = `<div class="pt-1 text-muted border-top text-left"><em>Correct!</em></div>`;
@@ -101,6 +105,7 @@ function usersAnswerChoice(selectedAnswerIndex) {
     };
 }
 
+// starts and updates timer
 function startTimer(updatedTime) {
     totalSeconds = updatedTime;
 
@@ -114,6 +119,7 @@ function startTimer(updatedTime) {
     }, 1000);
 }
 
+// adjusts timer when incorrect answer is selected.
 function reduceTimer() {
     // Clears the timer
     clearInterval(interval);
@@ -121,22 +127,28 @@ function reduceTimer() {
     startTimer(updatedTime);
 }
 
+// finalizes items at the end of the quiz. 
 function endQuiz() {
+    // final score will be the amount of seconds left - default to 0 if negative time.
     finalScore = totalSeconds;
     if (finalScore <= 0) {
         finalScore = 0;
     }
+
     finalScoreSpan.innerHTML = finalScore;
+    // Clears the timer
     clearInterval(interval);
     countdownDisplay.innerHTML = 0;
+
     allDoneContainer.classList.remove("d-none");
     quizTimeContainer.classList.add("d-none");
     document.getElementById("reportedScore").value = finalScore;
 }
 
+// event listener to start quiz
 startButton.addEventListener("click", quizStart);
 
-
+// event listener for answer that is selected by user
 $(document.body).on('click', '.btnAnswer', function() {
     var userChoice = $(this).val();
     usersAnswerChoice(userChoice);
