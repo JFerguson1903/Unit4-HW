@@ -18,7 +18,7 @@ The additional acceptance criteria was as follows:
 
 [Click here](https://jferguson1903.github.io/Unit4-HW/) to access the deployed application.
 
-Below is an image that shows the demo for the application's functionality that was provided in the assignment: 
+Below is the demo image provided as a guide to the assingment for the application's functionality: 
 
 ![Code Quiz Demo](https://user-images.githubusercontent.com/72481828/101234029-c93f9300-3681-11eb-9b67-2143c3f62bce.gif)
 
